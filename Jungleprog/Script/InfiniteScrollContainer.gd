@@ -1,3 +1,6 @@
+#version 1.0
+#created by jungleprog
+
 extends ScrollContainer
 
 @onready var vBoxContainer = $VBoxContainer
@@ -9,6 +12,7 @@ var scroll_min : int = -1
 var scroll_max : int = -1
 
 var data_list = []
+
 var box_container_list = []
 
 var is_flash = false
