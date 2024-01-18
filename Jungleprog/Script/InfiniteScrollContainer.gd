@@ -77,7 +77,8 @@ func _on_gui_input(event):
 			vertical_value = 0			
 		elif vertical_value >= end_line:
 			vertical_value = end_line
-			
+
+		scroll_vertical = vertical_value	
 		# Down Scroll
 		if scroll_vertical >= end_line and data_index < data_list.size():				
 			scroll_vertical = v_item_last_size
@@ -107,7 +108,7 @@ func _on_gui_input(event):
 			box.set_data(new_index)										
 			vBoxContainer.move_child(box, 0)	
 		
-		scroll_vertical = vertical_value		
+				
 
 func init_scroll():
 	if !is_set_scolle_size:
@@ -120,12 +121,14 @@ func init_scroll():
 		v_item_size = templateItem.get_rect().size.y
 
 		var rest_item_size = int(v_item_size) - int(get_rect().size.y) % int(v_item_size)		
-		v_item_last_size = v_item_size * 2 + rest_item_size
+		v_item_last_size = v_item_size * 2 + rest_item_size + 22
+		#22 means = (max container - 1) * speration
 		
 		
 		print(get_rect().size.y)
-		print(v_item_last_size)
+		print(rest_item_size)
 		print(v_item_size)
-		print("min = %d" % bar.min_value)
-		print("max = %d" % bar.max_value)
-		print(end_line)
+		print(v_item_last_size)		
+		print("min = %d" %bar.min_value)
+		print("max = %d" %bar.max_value)
+		print("end_line = %d" %end_line)
