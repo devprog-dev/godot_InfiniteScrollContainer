@@ -3,6 +3,10 @@ When you have to show a lot of items, instead of continuously generating nodes, 
 
 If you download the project, you don't need to set it up.
 
->If you need to set options
+*If you need to set options
 
->  > <img src=./Jungleprog/Asset/option.png>
+<img src=./Jungleprog/Asset/option.png>
+
+*mouse filter option use pass
+
+<img src=./Jungleprog/Asset/mouse.png>
