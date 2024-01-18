@@ -12,3 +12,6 @@ If you download the project, you don't need to set it up.
 *mouse filter option use pass
 
 <img src=./Jungleprog/Asset/mouse.png>
+
+
+*Only V Scroll you can change H Scroll. Easy~
