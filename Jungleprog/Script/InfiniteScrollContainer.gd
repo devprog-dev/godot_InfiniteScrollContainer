@@ -77,8 +77,7 @@ func _on_gui_input(event):
 			vertical_value = 0			
 		elif vertical_value >= end_line:
 			vertical_value = end_line
-				
-		scroll_vertical = vertical_value			
+			
 		# Down Scroll
 		if scroll_vertical >= end_line and data_index < data_list.size():				
 			scroll_vertical = v_item_last_size
@@ -107,6 +106,8 @@ func _on_gui_input(event):
 			var box = box_container_list[container_index]									
 			box.set_data(new_index)										
 			vBoxContainer.move_child(box, 0)	
+		
+		scroll_vertical = vertical_value		
 
 func init_scroll():
 	if !is_set_scolle_size:
