@@ -5,7 +5,7 @@ In the example, only 10 container objects are created and reused when scrolling.
 
 If you download the project, you don't need to set it up.
 
-*If you need to set options
+*somtimes, you need to set options
 
 <img src=./Jungleprog/Asset/option.png>
 
