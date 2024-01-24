@@ -15,3 +15,8 @@ If you download the project, you don't need to set it up.
 
 
 *Only V Scroll you can change H Scroll. Easy~
+
+*if you want use in mobile, you should change function in the script InfiniteScrollContainer.gd
+  _on_gui_input(event) -> _input(event)
+  
+  on_gui_input(event) to event.relative is not working well, because scroll container
