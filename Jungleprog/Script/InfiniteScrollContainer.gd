@@ -22,7 +22,7 @@ var end_line = 0 #520
 var data_index = 0  # max scroll
 var max_container = 12
 var v_item_size = 0
-var v_item_last_size = 0
+var limit_bottom = 0
 
 var delay_release : float = 0
 var is_delay : bool = false
@@ -60,7 +60,9 @@ func on_select_index(index):
 	if !is_pressed:
 		print("select button %d" % index)
 
-func _on_gui_input(event):	
+
+
+func _on_gui_input(event):	#func _input(event): , # if you want use in mobile change 
 
 	if is_pressed:
 		if event is InputEventScreenTouch and event.is_pressed() == false:			
@@ -81,8 +83,8 @@ func _on_gui_input(event):
 		scroll_vertical = vertical_value	
 		# Down Scroll
 		if scroll_vertical >= end_line and data_index < data_list.size():				
-			scroll_vertical = v_item_last_size
-			vertical_value = v_item_last_size
+			scroll_vertical = limit_bottom
+			vertical_value = limit_bottom
 
 			var box = box_container_list[container_index]				
 			box.set_data(data_index)				
@@ -121,14 +123,15 @@ func init_scroll():
 		v_item_size = templateItem.get_rect().size.y
 
 		var rest_item_size = int(v_item_size) - int(get_rect().size.y) % int(v_item_size)		
-		v_item_last_size = v_item_size * 2 + rest_item_size + 22
+		#limit_bottom = v_item_size * 2 + rest_item_size + 22
+		limit_bottom = end_line - (v_item_size)
 		#22 means = (max container - 1) * speration
 		
 		
 		print(get_rect().size.y)
 		print(rest_item_size)
 		print(v_item_size)
-		print(v_item_last_size)		
+		print(limit_bottom)		
 		print("min = %d" %bar.min_value)
 		print("max = %d" %bar.max_value)
 		print("end_line = %d" %end_line)
